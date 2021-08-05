@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+<title>Index.html</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      Logo
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="About Us.html">About Us</a>
+    <a href="Login.html">Login</a>
+        <div class="dropdown">
+        <a href="#" class="dropbtn">Dropdown</a>
+        <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        </div>
+</div>
+  </div>
+</div>
+ <div class="slideshow-container">
+
+<div class="mySlides">
+  <img src="1.jpeg" style="width:100%;height:500px">
+</div>
+
+<div class="mySlides">
+  <img src="2.jpeg" style="width:100%;height:500px">
+</div>
+
+<div class="mySlides">
+  <img src="3.jpeg" style="width:100%;height:500px">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<div class="container">
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="1.jpeg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+</div>
+<footer>
+    <hr>
+        <hr>
+<div class="container">
+    <div class="column">
+            <p>Company</p>
+ 
+                <ul style="list-style-type:disc">
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Privacy Policy</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+               
+            <div class="column">
+                 
+            <p>Learn</p>
+ 
+                <ul>
+                    <li>Algorithms</li>
+                    <li>Data Structures</li>
+                    <li>Languages</li>
+                    <li>CS Subjects</li>
+                    <li>Video Tutorials</li>
+                </ul>
+            </div>
+                
+            <div class="column">
+                 
+                <p>Practice</p>
+ 
+                <ul>
+                    <li>Company-wise</li>
+                    <li>Topic-wise</li>
+                    <li>Contests</li>
+                    <li>Subjective Questions</li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+  </body>
+</html>
